@@ -8,7 +8,9 @@
 var xml2js = require( 'xml2js' );
 var _ = require( 'underscore' );
 var logger = require( 'logger' );
-var config = require( 'config' );
+var clone = require( 'clone' );
+
+var config = clone( require( 'config' ) );
 
 var http = config.feedURI.substr( 0, 5 ) === 'https' ? require( 'https' ) : require( 'http' );
 
